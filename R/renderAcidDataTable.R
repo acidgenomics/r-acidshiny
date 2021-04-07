@@ -4,7 +4,6 @@
 #' @export
 #'
 #' @param expr `data.frame`.
-#' @param env `environment`.
 #'
 #' @examples
 #' data(mtcars, package = "datasets")
@@ -14,16 +13,13 @@
 #'     x <- renderAcidDataTable(expr)
 #'     class(x)
 #' }
-renderAcidDataTable <- function(
-    expr,
-    env = parent.frame()
-) {
+renderAcidDataTable <- function(expr) {
     renderDataTable(
-        expr = expr,
+        expr = eval(expr),
         ## This is highly recommended for large data frames.
         server = TRUE,
         ## Need to pass this through, otherwise won't pick up parent correctly.
-        env = env,
+        ## > env = parent.frame(),
         ## Ensure we pass the expr in directly, without quoting.
         quoted = FALSE,
         ## A list of initialization options.
