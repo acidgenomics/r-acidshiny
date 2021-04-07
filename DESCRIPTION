@@ -20,13 +20,12 @@ URL:
 BugReports: https://github.com/acidgenomics/r-acidshiny/issues/
 License: AGPL-3
 Encoding: UTF-8
-Depends:
-    R (>= 4.0),
-    shiny (>= 1.6)
+Depends: R (>= 4.0)
 Imports: 
     DT (>= 0.17)
 Suggests:
     roxygen2,
+    shiny (>= 1.6),
     shinycssloaders (>= 1.0),
     shinydashboard (>= 0.7)
 Roxygen: list(markdown = TRUE)
