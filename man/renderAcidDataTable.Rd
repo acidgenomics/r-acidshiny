@@ -4,10 +4,12 @@
 \alias{renderAcidDataTable}
 \title{Render table output with the JavaScript library DataTables using DT}
 \usage{
-renderAcidDataTable(expr)
+renderAcidDataTable(expr, env = parent.frame())
 }
 \arguments{
 \item{expr}{\code{data.frame}.}
+
+\item{env}{\code{environment}.}
 }
 \description{
 Render table output with the JavaScript library DataTables using DT
