@@ -4,6 +4,7 @@
 #' @export
 #'
 #' @param expr `data.frame`.
+#' @param env `environment`.
 #'
 #' @examples
 #' data(mtcars, package = "datasets")
@@ -13,9 +14,18 @@
 #'     x <- renderAcidDataTable(expr)
 #'     class(x)
 #' }
-renderAcidDataTable <- function(expr) {
+renderAcidDataTable <- function(
+    expr,
+    env = parent.frame()
+) {
     renderDataTable(
         expr = expr,
+        ## This is highly recommended for large data frames.
+        server = TRUE,
+        ## Need to pass this through, otherwise won't pick up parent correctly.
+        env = env,
+        ## Ensure we pass the expr in directly, without quoting.
+        quoted = FALSE,
         ## A list of initialization options.
         ## See "https://datatables.net/reference/option/" for details.
         options = list(
