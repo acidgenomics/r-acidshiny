@@ -2,7 +2,7 @@ Package: AcidShiny
 Title: Acid Genomics Shiny App Toolkit
 Description: Shiny app development functions for server and UI consistency.
 Version: 0.0.2.9000
-Date: 2021-11-06
+Date: 2022-04-27
 Authors@R: c(
     person(
         "Michael", "Steinbaugh",
@@ -20,14 +20,14 @@ URL:
 BugReports: https://github.com/acidgenomics/r-acidshiny/issues/
 License: AGPL-3
 Encoding: UTF-8
-Depends: R (>= 4.1)
+Depends: R (>= 4.2)
 Imports: 
-    DT (>= 0.20)
+    DT
 Suggests:
     roxygen2,
-    shiny (>= 1.7.1),
-    shinycssloaders (>= 1.0.0),
-    shinydashboard (>= 0.7.2)
+    shiny,
+    shinycssloaders,
+    shinydashboard
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Additional_repositories: https://r.acidgenomics.com
